@@ -68,8 +68,7 @@ git_create:
 	case "$(shell git remote)" in \
 		"origin" ) git remote remove origin; \
 	esac 
-	git remote add origin https://gitlab.com/baoduyduong0206/kit.git
-	git config --global credential.helper cache
+	git remote add origin https://github.com/duongbaoduy/android-experiment.git
 	@echo Done $@ : $^ !!
 
 .PHONY: build
@@ -91,6 +90,16 @@ pub:
 	git push -u origin --all
 	@echo Done $@ !!
 
+.PHONY: gitcb_%
+gitcb_%:
+	git branch $(subst gitcb_,,$@)
+	@echo Done $@ !!
+	
+.PHONY: gitdb_%
+gitdb_%:
+	git brand -d $(subst gitdb_,,$@)
+	@echo Done $@ !!
+	
 .PHONY: gitk
 gitk:
 	gitk.cmd --all
