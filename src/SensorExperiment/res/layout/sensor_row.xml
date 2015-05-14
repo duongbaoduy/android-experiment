@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal">
+ 
+     <TextView android:id="@+id/sensorname"
+         android:textSize="24px"
+         android:textStyle="bold"
+         android:layout_width="240px"
+         android:layout_height="wrap_content"/>
+
+	<TextView android:id="@+id/samplingstatus"
+		android:textSize="14px"
+		android:textStyle="italic"
+		android:layout_width="100px"
+		android:layout_height="wrap_content"
+		android:text="@string/textview_sampling"
+		android:visibility="gone"/>
+</LinearLayout>
