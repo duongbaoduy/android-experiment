@@ -1,0 +1,6 @@
+bin
+*.o
+*.a
+*.so
+gen
+.settings
