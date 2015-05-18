@@ -1,0 +1,8 @@
+bin
+*.o
+*.a
+*.so
+gen
+obj
+libs/armeabi
+.settings
