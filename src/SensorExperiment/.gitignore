@@ -4,3 +4,5 @@ bin
 *.so
 gen
 .settings
+obj
+libs/armeabi
