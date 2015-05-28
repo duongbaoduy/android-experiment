@@ -12,7 +12,7 @@
 
 #define TEST_LOG_ERROR(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 
-#define JOW(rettype,name) extern "C" rettype JNIEXPORT JNICALL  Java_org_dbd_exp_android_dev_Sensor_##name
+#define JOW(rettype,name) extern "C" rettype JNIEXPORT JNICALL  Java_org_dbd_exp_android_dev_NativeSensor_##name
 
 #define THIS_FILE "sensor.cpp"
 
