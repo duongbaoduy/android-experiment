@@ -1,8 +1,16 @@
 package aexp.sensors;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import org.dbd.exp.android.dev.R;
+
 import android.app.Activity;
-import android.content.Intent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -12,8 +20,6 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.util.Log;
 import android.widget.TextView;
-import java.util.List;
-import java.io.*;
 
 public class SensorMonitor extends Activity implements SensorEventListener {
     static final String LOG_TAG = "SENSORMONITOR";

@@ -1,14 +1,15 @@
 package aexp.sensors;
 
+import java.util.List;
+
+import org.dbd.exp.android.dev.R;
+
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import java.util.List;
+import android.widget.TextView;
 
 public class SensorListAdapter extends BaseAdapter {
 

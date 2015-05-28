@@ -1,9 +1,12 @@
 package aexp.sensors;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dbd.exp.android.dev.R;
+
 import android.app.ListActivity;
-import android.content.BroadcastReceiver;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
@@ -12,12 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Sensors extends ListActivity
 {

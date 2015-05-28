@@ -1,12 +1,14 @@
 package aexp.sensors;
 
+import org.dbd.exp.android.dev.R;
+
 import android.app.Activity;
-import android.os.Bundle;
 import android.content.SharedPreferences;
+import android.hardware.SensorManager;
+import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
-import android.hardware.SensorManager;
 
 public class SensorSettings extends Activity {
     public void onCreate(Bundle savedInstanceState) {

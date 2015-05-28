@@ -24,33 +24,32 @@
  		abort();                                                              \
  	}
 
-//// Abort the process if |jni| has a Java exception pending, emitting |msg|.
-//
-//#define CHECK_EXCEPTION(jni, msg)                                              \
- //	if (0) {} else {                                                           \
- //		if (jni->ExceptionCheck()) {                                           \
- //			jni->ExceptionDescribe();                                          \
- //			jni->ExceptionClear();                                             \
- //			CHECK(0, msg);                                                     \
- //		}                                                                      \
- //	}
-//
-//// Helper that calls ptr->Release() and logs a useful message if that didn't
-//// actually delete *ptr because of extra refcounts.
-//
-//#define CHECK_RELEASE(ptr)                                        		\
- //	do {                                                            	\
- //		int count = (ptr)->Release();                                 	\
- //		if (count != 0) {                                             	\
- //			TEST_LOG( "Refcount unexpectedly not 0: %d : %d " , (ptr)  	\
- //					,count);                             				\
- //		}                                                             	\
- //		CHECK(!count, "Unexpected refcount");                         	\
- //	} while 	(0)
+// Abort the process if |jni| has a Java exception pending, emitting |msg|.
+
+#define CHECK_EXCEPTION(jni, msg)                                              \
+ 	if (0) {} else {                                                           \
+ 		if (jni->ExceptionCheck()) {                                           \
+ 			jni->ExceptionDescribe();                                          \
+ 			jni->ExceptionClear();                                             \
+ 			CHECK(0, msg);                                                     \
+ 		}                                                                      \
+ 	}
+
+// Helper that calls ptr->Release() and logs a useful message if that didn't
+// actually delete *ptr because of extra refcounts.
+
+#define CHECK_RELEASE(ptr)                                        		\
+ 	do {                                                            	\
+ 		int count = (ptr)->Release();                                 	\
+ 		if (count != 0) {                                             	\
+ 			TEST_LOG( "Refcount unexpectedly not 0: %d : %d " , (ptr)  	\
+ 					,count);                             				\
+ 		}                                                             	\
+ 		CHECK(!count, "Unexpected refcount");                         	\
+ 	} while 	(0)
 
 // Helper functions
 
-#if defined(ANDROID)
 char filenameStr[2][256] = { { 0 }, { 0 }, }; // Allow two buffers for those API calls taking two filenames
 int currentStr = 0;
 
@@ -59,16 +58,6 @@ const char* GetFilename(const char* filename) {
 	sprintf(filenameStr[currentStr], "/sdcard/admtest/%s", filename);
 	return filenameStr[currentStr];
 }
-
-#elif !defined(WEBRTC_IOS)
-const char* GetFilename(const char* filename) {
-	std::string
-	full_path_filename = webrtc::test::OutputPath()
-	filename;
-	return full_path_filename.c_str();
-}
-
-#endif
 
 static JavaVM* g_jvm;
 
@@ -90,9 +79,6 @@ JOW(jint, SensorInit)(JNIEnv *env, jclass thiz) {
 }
 
 JOW(jint, RunTest)(JNIEnv *env, jclass thiz, jint type) {
-	return 0;
-}
-JOW(jint, AudioInit)(JNIEnv *env, jclass thiz, jobject obj_context) {
 	return 0;
 }
 
