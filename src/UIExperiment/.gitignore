@@ -4,3 +4,4 @@ bin
 *.so
 gen
 .settings
+lib
